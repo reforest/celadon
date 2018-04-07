@@ -1,0 +1,13 @@
+{ 
+  "presets": [
+    "es2017",
+    "env"
+  ],
+  "plugins": [
+    "transform-object-rest-spread"
+  ],
+  "ignore": [
+    "node_modules",
+    "dist"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "celadon",
+  "version": "0.0.1",
+  "description": "The middleware that gives back to the environment.",
+  "main": "./dist/app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node ./dist/init.js",
+    "test": "eslint --fix .",
+    "cmd": "src/cmd.js",
+    "build": "babel -d ./dist ./src -s",
+    "dev": "babel-watch ./src/prototype.js",
+    "release": "git pull && npm run test && git add . && npm run build && git commit -m 'deploy' && git push origin master && npm version patch"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reforest/celadon.git"
+  },
+  "author": {
+    "name": "Amazingandyyy",
+    "email": "amazingandyyy@gmail.com",
+    "url": "https://amazingandyyy.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reforest/celadon/issues"
+  },
+  "homepage": "https://github.com/reforest/celadon#readme",
+  "dependencies": {
+    "lambocoin": "0.0.11"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-watch": "^2.0.7",
+    "eslint": "^4.14.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-es5": "^1.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.5.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3"
+  }
+}
