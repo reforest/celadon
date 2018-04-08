@@ -38,17 +38,24 @@ console.log(NPOs)
 // ]
 
 export default function handler(state, tx) {
+  // verify the tx
+  // secp256k1.verify(tx.data, tx.signature, tx.data.from)
+
   let senderAddress = tx.data.from.toString('hex')
   let receiverAddress = tx.data.to.toString('hex')
-  console.log(tx.data)
   trasactionWithCeledon(state, {
     from: senderAddress,
     to: receiverAddress,
     org: donateTo(NPOs),
-    feePortion: 0.018,
+    feePortion: tx.data.feePortion,
     amount: tx.data.amount
   })
 }
+
+<!-- customize NPOs -->
+donateTo() // default to celadon_wallet
+donateTo('cosmos_walet')
+donateTo(['cosmos_walet', 'impacthub_wallet', 'andy_wallettttttt'])
 ```
 
 ### In the lotionjs
@@ -67,6 +74,10 @@ app.use(handler);
 app.listen(3000);
 ```
 
+## Join the NPOs wallet list
+- send an [issue](https://github.com/reforest/celadon/issues)
+- or send us [email](amazingandyyy@gmail.com)
+
 ## Author
 
 [reforest](https://github.com/reforest)
@@ -81,3 +92,6 @@ app.listen(3000);
 ## Standard
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+
+## License
+[MIT](https://github.com/reforest/celadon/blob/master/LICENSE)
