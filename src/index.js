@@ -7,34 +7,36 @@ function trasactionWithCeledon(state, opts){
     //   feePortion,
     //   org
     // }
-    const { from, to } = opts;
+    const { from, to, feePortion, org } = opts;
     const addressLength = 66;
     if(from.length < addressLength || to.length < addressLength) {
       return {...state}
     }
     let userOneBalance = state.balances[from];
     let userTwoBalance = state.balances[to];
+    let orgTwoBalance = state.balances[org];
     if((userOneBalance<=10)||userTwoBalance<=10) {
       return {...state}
     }
 
-    const { feePortion, org } = opts;
     let amount = opts.amount || Math.random()*((Math.min(userOneBalance, userTwoBalance))/2.4);
     let fee = feePortion || 0.01;
     amount-=amount*fee;
     if(amount>userOneBalance) {
       return {...state}
     }
+    let donations = amount*fee;
+    amount -= donations;
+
     userOneBalance-=amount;
     userTwoBalance+=amount;
-  
-  let donations = amount*fee;
-  amount -= donations;
+    orgTwoBalance+=donations
 
   state.balances = {
     ...state.balances,
     [from]: userOneBalance,
-    [to]: userTwoBalance
+    [to]: userTwoBalance,
+    [org]: orgTwoBalance
   }
 
   state.transactions = [
