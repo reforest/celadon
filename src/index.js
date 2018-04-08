@@ -55,11 +55,18 @@ function trasactionWithCeledon(state, opts){
 }
 
 
-let specialWallets = [
+let NPOs = [
   // special wallet
   'celadon_wallet',
   'cosmos_walet',
   'impacthub_wallet',
   'andy_wallettttttt'
 ]
-export {trasactionWithCeledon, specialWallets};
+
+function donateTo(name) {
+  if(typeof name === 'string') return name;
+  if(name.length===1) return name[0];
+  if(name.length>1) return name[Math.floor(Math.random()*name.length)];
+  return NPOs[Math.floor(Math.random()*(NPOs.length))]
+}
+export {trasactionWithCeledon, NPOs, donateTo};
