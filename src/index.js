@@ -60,7 +60,7 @@ function trasactionWithCeledon(state, opts){
 let NPOs = [
   // special wallet
   'celadon_wallet',
-  'cosmos_walet',
+  'cosmos_wallet',
   'impacthub_wallet',
   'andy_wallettttttt'
 ]

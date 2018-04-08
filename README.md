@@ -29,7 +29,7 @@ console.log(NPOs)
 // [
 //   // special wallet
 //   'celadon_wallet',
-//   'cosmos_walet',
+//   'cosmos_wallet',
 //   'impacthub_wallet',
 //   'andy_wallettttttt'
 // ]
@@ -51,8 +51,8 @@ export default function handler(state, tx) {
 
 <!-- customize NPOs -->
 donateTo() // default to celadon_wallet
-donateTo('cosmos_walet')
-donateTo(['cosmos_walet', 'impacthub_wallet', 'andy_wallettttttt'])
+donateTo('cosmos_wallet')
+donateTo(['cosmos_wallet', 'impacthub_wallet', 'andy_wallettttttt'])
 ```
 
 ### In the lotionjs
