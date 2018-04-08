@@ -71,9 +71,16 @@ app.use(handler);
 app.listen(3000);
 ```
 
+## Walkthrough
+
+![introduction - celadon](https://raw.githubusercontent.com/reforest/celadon/master/introduction%20-%20celadon.png)
+
+
 ## Join the NPOs wallet list
+
 - send an [issue](https://github.com/reforest/celadon/issues)
 - or send us [email](amazingandyyy@gmail.com)
+
 
 ## Author
 
