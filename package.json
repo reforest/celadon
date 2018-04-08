@@ -2,7 +2,7 @@
   "name": "celadon",
   "version": "0.0.1",
   "description": "The middleware that gives back to the environment.",
-  "main": "./dist/app.js",
+  "main": "./dist/index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./dist/init.js",
     "test": "eslint --fix .",
@@ -29,7 +29,9 @@
   },
   "homepage": "https://github.com/reforest/celadon#readme",
   "dependencies": {
-    "lambocoin": "0.0.11"
+    "lambocoin": "0.0.13",
+    "reforest-fungus": "^1.0.2",
+    "rm": "^0.1.8"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
