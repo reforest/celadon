@@ -1,12 +1,9 @@
-# celadon
-The middleware that gives back to the environment.
 <h1 align="center">
 Celadon
 </h1>
 <p align="center">
 A lotionjs transaction middleware, which take a little part of the donation amount to donate to the non-profit organization you choose.
 </p>
-
 
 <p align="center">
     <a href="https://travis-ci.org/reforest/celadon" target='_blank'>
