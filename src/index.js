@@ -54,4 +54,12 @@ function trasactionWithCeledon(state, opts){
   ]
 }
 
-export {trasactionWithCeledon};
+
+let specialWallets = [
+  // special wallet
+  'celadon_wallet',
+  'cosmos_walet',
+  'impacthub_wallet',
+  'andy_wallettttttt'
+]
+export {trasactionWithCeledon, specialWallets};
