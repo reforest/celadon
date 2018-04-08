@@ -64,9 +64,13 @@ let NPOs = [
 ]
 
 function donateTo(name) {
+  const fallback = NPOs[Math.floor(Math.random()*(NPOs.length))];
+  if (!name) {
+    return fallback;
+  }
   if(typeof name === 'string') return name;
   if(name.length===1) return name[0];
   if(name.length>1) return name[Math.floor(Math.random()*name.length)];
-  return NPOs[Math.floor(Math.random()*(NPOs.length))]
+  return fallback;
 }
 export {trasactionWithCeledon, NPOs, donateTo};
