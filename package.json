@@ -9,7 +9,7 @@
     "cmd": "src/cmd.js",
     "build": "babel -d ./dist ./src -s",
     "dev": "babel-watch ./src/prototype.js",
-    "release": "git pull && npm run test && git add . && npm run build && git commit -m 'deploy' && git push origin master && npm version patch"
+    "release": "git pull && npm run test && git add . && npm run build && git commit -m 'deploy' && git push origin master && npm publish && npm version patch"
   },
   "engines": {
     "node": ">=8"
