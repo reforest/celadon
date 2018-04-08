@@ -12,8 +12,8 @@ function trasactionWithCeledon(state, opts){
     if(from.length < addressLength || to.length < addressLength) {
       return {...state}
     }
-    let userOneBalance = state.balances[from];
-    let userTwoBalance = state.balances[to];
+    let userOneBalance = state.balances[from] || amount+10;
+    let userTwoBalance = state.balances[to] || 0;
     let orgTwoBalance = state.balances[org];
     if((userOneBalance<=10)||userTwoBalance<=10) {
       return {...state}
