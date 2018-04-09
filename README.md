@@ -22,8 +22,39 @@ A lotionjs transaction middleware, which take a little part of the donation amou
 $ npm i --save celadon
 ```
 
-## Usage 
+## Usage it as a handler
 ```javascript
+import lotion from 'lotion';
+import { handler as CeladonHandler } from 'celadon';
+
+let app = lotion({ 
+  devMode: true,
+  initialState: {
+    ...data
+  }
+});
+
+app.use(CeladonHandler);
+app.listen(3000);
+```
+
+## Usage it in your own handler
+```javascript
+// app.js
+import lotion from 'lotion';
+import handler from './handler';
+
+let app = lotion({ 
+  devMode: true,
+  initialState: {
+    ...data
+  }
+});
+
+app.use(handler);
+app.listen(3000);
+
+// in handler.js
 import { trasactionWithCeledon, donateTo } from 'celadon';
 console.log(NPOs)
 // [
@@ -53,22 +84,6 @@ export default function handler(state, tx) {
 donateTo() // default to celadon_wallet
 donateTo('cosmos_wallet')
 donateTo(['cosmos_wallet', 'impacthub_wallet', 'andy_wallettttttt'])
-```
-
-### In the lotionjs
-```javascript
-import lotion from 'lotion';
-import handler from './handler';
-
-let app = lotion({ 
-  devMode: true,
-  initialState: {
-    ...data
-  }
-});
-
-app.use(handler);
-app.listen(3000);
 ```
 
 ## Walkthrough
