@@ -13,7 +13,7 @@ function trasactionWithCeledon(state, opts){
       return {...state}
     }
     let userOneBalance = state.balances[from] || amount+10;
-    let userTwoBalance = state.balances[to] || 0;
+    let userTwoBalance = state.balances[to] || amount+10;
     let orgBalance = state.balances[org] || 0;
     if((userOneBalance<=amount) || userTwoBalance<=amount) {
       return {...state}
