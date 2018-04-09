@@ -88,7 +88,7 @@ donateTo(['cosmos_wallet', 'impacthub_wallet', 'andy_wallettttttt'])
 
 ## Walkthrough
 
-![introduction - celadon](https://raw.githubusercontent.com/reforest/celadon/master/introduction%20-%20celadon.png)
+![introduction - celadon middlware](https://github.com/reforest/celadon/blob/master/introduction%20-%20celadon%20middleware.png?raw=true)
 
 
 ## Join the NPOs wallet list
