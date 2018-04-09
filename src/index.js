@@ -1,15 +1,3 @@
-function hanlder(state, tx) {
-  let senderAddress = tx.data.from.toString('hex')
-  let receiverAddress = tx.data.to.toString('hex')
-  trasactionWithCeledon(state, {
-    from: senderAddress,
-    to: receiverAddress,
-    org: donateTo(),
-    feePortion: tx.data.feePortion || 0.01,
-    amount: tx.data.amount
-  })
-}
-
 function trasactionWithCeledon(state, opts){
   console.log(opts.org)
     // opts: {
@@ -87,4 +75,17 @@ function donateTo(name) {
   if(name.length>1) return name[Math.floor(Math.random()*name.length)];
   return fallback;
 }
-export {trasactionWithCeledon, NPOs, donateTo, hanlder};
+
+function handler(state, tx) {
+  let senderAddress = tx.data.from.toString('hex')
+  let receiverAddress = tx.data.to.toString('hex')
+  trasactionWithCeledon(state, {
+    from: senderAddress,
+    to: receiverAddress,
+    org: donateTo(),
+    feePortion: tx.data.feePortion || 0.01,
+    amount: tx.data.amount
+  })
+}
+
+export {trasactionWithCeledon, NPOs, donateTo, handler};
