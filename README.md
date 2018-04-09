@@ -22,7 +22,7 @@ A lotionjs transaction middleware, which take a little part of the donation amou
 $ npm i --save celadon
 ```
 
-## Usage it as a handler
+## Use it as a handler
 ```javascript
 import lotion from 'lotion';
 import { handler as CeladonHandler } from 'celadon';
@@ -38,7 +38,7 @@ app.use(CeladonHandler);
 app.listen(3000);
 ```
 
-## Usage it in your own handler
+## Use it in your own handler
 ```javascript
 // app.js
 import lotion from 'lotion';
@@ -55,15 +55,9 @@ app.use(handler);
 app.listen(3000);
 
 // in handler.js
-import { trasactionWithCeledon, donateTo } from 'celadon';
-console.log(NPOs)
-// [
-//   // special wallet
-//   'celadon_wallet',
-//   'cosmos_wallet',
-//   'impacthub_wallet',
-//   'andy_wallettttttt'
-// ]
+import { trasactionWithCeledon, donateTo, NPOs } from 'celadon';
+console.log(NPOs);
+// ['celadon_wallet', 'cosmos_wallet', 'impacthub_wallet', 'andy_wallettttttt']
 
 export default function handler(state, tx) {
   // verify the tx
@@ -79,7 +73,11 @@ export default function handler(state, tx) {
     amount: tx.data.amount
   })
 }
+```
 
+### Choose your NPOs
+
+```javascript
 <!-- customize NPOs -->
 donateTo() // default to celadon_wallet
 donateTo('cosmos_wallet')
